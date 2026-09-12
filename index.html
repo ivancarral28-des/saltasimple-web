@@ -1,4 +1,100 @@
-<!-- Sección de Testimonios (Carrusel) -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SaltaSimple | Contratación de Servicios en Salta</title>
+  <!-- Ruta directa al CSS compilado en la raíz -->
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+  <!-- Navegación con Submenú y Responsive -->
+  <header class="navbar">
+    <a href="#" class="brand">Salta<span>Simple</span></a>
+
+    <nav class="nav-menu">
+      <ul class="nav-links">
+        <li><a href="#" class="nav-item active">Inicio</a></li>
+        <li class="dropdown">
+          <a href="#" class="nav-item">Categorías ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">🚚 Fletes y Traslados</a></li>
+            <li><a href="#">🧹 Limpieza Doméstica</a></li>
+            <li><a href="#">🍹 Eventos y Catering</a></li>
+            <li><a href="#">⛺ Alquiler de Carpas</a></li>
+            <li><a href="#">🛡️ Seguridad Privada</a></li>
+          </ul>
+        </li>
+        <li><a href="#testimonios" class="nav-item">Opiniones</a></li>
+      </ul>
+    </nav>
+
+    <button class="btn-primary">Soy Prestador</button>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-badge">Plataforma Salteña</span>
+      <h1>Contrata servicios locales en minutos</h1>
+      <p>Cotizaciones transparentes para fletes, eventos y soluciones para tu hogar.</p>
+    </div>
+  </section>
+
+  <!-- Catálogo de Servicios -->
+  <main class="container">
+    <h2 class="section-title">Servicios Destacados</h2>
+
+    <div class="services-grid">
+      <!-- Tarjeta 1: Fletes -->
+      <article class="card">
+        <div class="card-header">
+          <span class="card-tag tag-distance">Cotización por Distancia</span>
+          <span class="card-icon">🚚</span>
+        </div>
+        <h3>Fletes y Traslados Local/Provincial</h3>
+        <p>Servicio puerta a puerta con carga y descarga opcional. Unidades adaptadas para todo volumen.</p>
+        <div class="price-box">
+          <span class="label">Tarifa base</span>
+          <span class="price">$15.000 <small>/ viaje inicial</small></span>
+        </div>
+        <button class="card-btn">Calcular Flete</button>
+      </article>
+
+      <!-- Tarjeta 2: Limpieza -->
+      <article class="card">
+        <div class="card-header">
+          <span class="card-tag tag-hourly">Por Hora</span>
+          <span class="card-icon">🧹</span>
+        </div>
+        <h3>Limpieza Doméstica y Comercial</h3>
+        <p>Personal asegurado para mantenimiento de casas, departamentos, oficinas y fincas.</p>
+        <div class="price-box">
+          <span class="label">Precio estimado</span>
+          <span class="price">$4.500 <small>/ hora</small></span>
+        </div>
+        <button class="card-btn">Reservar Personal</button>
+      </article>
+
+      <!-- Tarjeta 3: Eventos -->
+      <article class="card">
+        <div class="card-header">
+          <span class="card-tag tag-event">Por Evento</span>
+          <span class="card-icon">🍹</span>
+        </div>
+        <h3>Barras de Tragos & Catering</h3>
+        <p>Barras móviles completas, barman profesional e insumos según la cantidad de invitados.</p>
+        <div class="price-box">
+          <span class="label">Presupuesto</span>
+          <span class="price">A medida <small>/ por persona</small></span>
+        </div>
+        <button class="card-btn">Armar Combo</button>
+      </article>
+    </div>
+  </main>
+
+  <!-- Sección de Testimonios (Carrusel) -->
   <section class="testimonials-section" id="testimonios">
     <div class="container">
       <h2 class="section-title">Lo que dicen quienes confían en SaltaSimple</h2>
@@ -66,3 +162,38 @@
       </div>
     </div>
   </section>
+
+  <!-- Pie de Página (Footer) -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <a href="#" class="brand">Salta<span>Simple</span></a>
+        <p>El marketplace de servicios para conectar clientes y prestadores de la provincia de Salta.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#">Fletes y Mudanzas</a></li>
+          <li><a href="#">Limpieza Doméstica</a></li>
+          <li><a href="#">Barras y Eventos</a></li>
+          <li><a href="#">Carpas y Mobiliario</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Prestadores</h4>
+        <ul>
+          <li><a href="#">Registrar mi servicio</a></li>
+          <li><a href="#">Términos de uso</a></li>
+          <li><a href="#">Centro de Ayuda</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 SaltaSimple.com.ar — Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
