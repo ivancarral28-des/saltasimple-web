@@ -22,7 +22,6 @@ body {
   top: 0;
   z-index: 100;
   flex-wrap: wrap;
-  gap: 1rem;
 }
 .navbar .brand {
   font-size: 1.5rem;
@@ -92,6 +91,33 @@ body {
 }
 .btn-primary:hover {
   background: #0f766e;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0.5rem;
+}
+.nav-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #0f172a;
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.nav-toggle.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 .hero {
@@ -408,18 +434,36 @@ body {
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+  .nav-toggle {
+    display: flex;
+  }
+  .nav-menu {
+    width: 100%;
   }
   .nav-links {
+    display: none;
+    width: 100%;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.8rem;
+    padding-top: 1rem;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .nav-links .dropdown {
+    width: 100%;
+  }
+  .nav-links .dropdown.active .dropdown-menu {
+    display: block;
+    position: static;
+    box-shadow: none;
+    border: none;
+    background: #f8fafc;
+    padding-left: 1rem;
   }
   .btn-primary {
     width: 100%;
-    text-align: center;
+    margin-top: 0.5rem;
   }
 }
 

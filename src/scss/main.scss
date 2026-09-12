@@ -1,4 +1,4 @@
-// 1. Declaración de Variables
+// 1. Variables
 $primary: #0d9488;
 $primary-dark: #0f766e;
 $dark: #0f172a;
@@ -23,7 +23,7 @@ body {
   line-height: 1.5;
 }
 
-// 3. Navbar & Menú Desplegable
+// 3. Navbar & Menú
 .navbar {
   background: #ffffff;
   padding: 1rem 2rem;
@@ -35,7 +35,6 @@ body {
   top: 0;
   z-index: 100;
   flex-wrap: wrap;
-  gap: 1rem;
 
   .brand {
     font-size: 1.5rem;
@@ -111,6 +110,32 @@ body {
   &:hover { background: $primary-dark; }
 }
 
+// Botón Hamburgesa Móvil
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0.5rem;
+
+  span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: $dark;
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  &.open {
+    span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    span:nth-child(2) { opacity: 0; }
+    span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+  }
+}
+
 // 4. Hero Section
 .hero {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -140,7 +165,7 @@ body {
 
 .section-title { margin-bottom: 1.5rem; color: $dark; }
 
-// 5. Grid y Tarjetas
+// 5. Grid y Tarjetas de Servicio
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -328,7 +353,7 @@ body {
   }
 }
 
-// 8. Pie de Página (Footer)
+// 8. Footer
 .footer {
   background: $dark;
   color: #94a3b8;
@@ -351,7 +376,6 @@ body {
     }
 
     p { font-size: 0.9rem; margin-top: 0.5rem; }
-
     h4 { color: white; margin-bottom: 1rem; font-size: 1rem; }
 
     ul {
@@ -373,7 +397,41 @@ body {
 
 // 9. Media Queries (Responsive Mobile)
 @media (max-width: 768px) {
-  .navbar { flex-direction: column; align-items: flex-start; }
-  .nav-links { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
-  .btn-primary { width: 100%; text-align: center; }
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    width: 100%;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 1rem;
+
+    &.active {
+      display: flex;
+    }
+
+    .dropdown {
+      width: 100%;
+
+      &.active .dropdown-menu {
+        display: block;
+        position: static;
+        box-shadow: none;
+        border: none;
+        background: $light;
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  .btn-primary {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
 }
