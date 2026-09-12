@@ -2,12 +2,13 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
 }
 
 body {
   background-color: #f8fafc;
-  color: #0f172a;
+  color: #334155;
+  line-height: 1.5;
 }
 
 .navbar {
@@ -17,12 +18,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 .navbar .brand {
   font-size: 1.5rem;
   font-weight: 800;
   color: #0d9488;
   text-decoration: none;
+  letter-spacing: -0.5px;
 }
 .navbar .brand span {
   color: #0f172a;
@@ -33,84 +38,161 @@ body {
   color: white;
   border: none;
   padding: 0.6rem 1.2rem;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
+  transition: background 0.2s;
 }
 .btn-primary:hover {
   background: #0f766e;
 }
 
 .hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: white;
+  padding: 4rem 1rem;
   text-align: center;
-  padding: 3rem 1rem;
-  background: #ffffff;
-  border-bottom: 1px solid #e2e8f0;
+}
+.hero .hero-badge {
+  background: rgba(13, 148, 136, 0.2);
+  color: #2dd4bf;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(45, 212, 191, 0.3);
 }
 .hero h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+  margin: 1rem 0 0.5rem;
 }
 .hero p {
-  color: #64748b;
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .container {
   max-width: 1100px;
-  margin: 2.5rem auto;
+  margin: 2rem auto;
   padding: 0 1rem;
 }
 
-.section-title {
-  margin-bottom: 1.5rem;
+.categories-bar {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+.categories-bar .cat-pill {
+  background: white;
+  border: 1px solid #e2e8f0;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.categories-bar .cat-pill:hover, .categories-bar .cat-pill.active {
+  background: #0f172a;
+  color: white;
+  border-color: #0f172a;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
 }
 
 .card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.card .card-header, .card .card-tag-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.card .card-icon {
+  font-size: 1.5rem;
 }
 .card .card-tag {
   font-size: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-weight: 700;
+}
+.card .card-tag.tag-distance {
   background: #e0f2fe;
   color: #0369a1;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  width: fit-content;
-  font-weight: 600;
-  margin-bottom: 0.8rem;
+}
+.card .card-tag.tag-hourly {
+  background: #fef3c7;
+  color: #b45309;
+}
+.card .card-tag.tag-event {
+  background: #fce7f3;
+  color: #be185d;
 }
 .card h3 {
+  color: #0f172a;
+  font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
 .card p {
   color: #64748b;
   font-size: 0.9rem;
   flex-grow: 1;
+  margin-bottom: 1.5rem;
+}
+.card .price-box {
+  background: #f8fafc;
+  padding: 0.8rem;
+  border-radius: 8px;
   margin-bottom: 1rem;
 }
-.card .price {
-  font-weight: 700;
-  margin-bottom: 1rem;
+.card .price-box .label {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.card .price-box .price {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+.card .price-box .price small {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #64748b;
 }
 .card .card-btn {
-  background: #0f172a;
+  background: #0d9488;
   color: white;
   border: none;
-  padding: 0.6rem;
-  border-radius: 6px;
+  padding: 0.75rem;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
+  transition: background 0.2s;
 }
 .card .card-btn:hover {
-  opacity: 0.9;
+  background: #0f766e;
 }

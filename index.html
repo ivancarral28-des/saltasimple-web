@@ -10,43 +10,70 @@
 
   <header class="navbar">
     <a href="#" class="brand">Salta<span>Simple</span></a>
-    <button class="btn-primary">Publicar Servicio</button>
+    <button class="btn-primary">+ Publicar Servicio</button>
   </header>
 
   <section class="hero">
-    <h1>Servicios para tu hogar y eventos en Salta</h1>
-    <p>Cotiza y contrata fletes, limpieza, catering y más de forma transparente.</p>
+    <div class="hero-content">
+      <span class="hero-badge">Plataforma Salteña</span>
+      <h1>Contrata servicios locales en minutos</h1>
+      <p>Cotizaciones transparentes para fletes, eventos y soluciones para tu hogar.</p>
+    </div>
   </section>
 
   <main class="container">
-    <h2 class="section-title">Catálogo de Servicios</h2>
+    <!-- Filtros de Categorías -->
+    <div class="categories-bar">
+      <button class="cat-pill active">Todos</button>
+      <button class="cat-pill">🚚 Fletes y Traslados</button>
+      <button class="cat-pill">🧹 Limpieza</button>
+      <button class="cat-pill">🎉 Eventos y Carpas</button>
+    </div>
 
     <div class="services-grid">
       <!-- Tarjeta 1: Fletes -->
       <article class="card">
-        <div class="card-tag">Tarifa Dinámica</div>
-        <h3>Fletes y Traslados</h3>
-        <p>Servicio por kilómetro y peso. Unidades con capacidad de carga adaptada.</p>
-        <div class="price">Cotización por distancia</div>
-        <button class="card-btn">Solicitar Cotización</button>
+        <div class="card-header">
+          <span class="card-tag tag-distance">Cotización por Distancia</span>
+          <span class="card-icon">🚚</span>
+        </div>
+        <h3>Fletes y Traslados Local/Provincial</h3>
+        <p>Servicio puerta a puerta con carga y descarga opcional. Unidades adaptadas para todo volumen.</p>
+        <div class="price-box">
+          <span class="label">Tarifa base</span>
+          <span class="price">$15.000 <small>/ viaje inicial</small></span>
+        </div>
+        <button class="card-btn">Calcular Flete</button>
       </article>
 
       <!-- Tarjeta 2: Limpieza -->
       <article class="card">
-        <div class="card-tag">Por Hora</div>
-        <h3>Limpieza Doméstica</h3>
-        <p>Personal calificado para mantenimiento de casas, oficinas y fincas.</p>
-        <div class="price">Desde $-- / hora</div>
-        <button class="card-btn">Reservar Horas</button>
+        <div class="card-tag-wrapper">
+          <span class="card-tag tag-hourly">Por Hora</span>
+          <span class="card-icon">🧹</span>
+        </div>
+        <h3>Limpieza Doméstica y Comercial</h3>
+        <p>Personal asegurado para mantenimiento de casas, departamentos, oficinas y fincas.</p>
+        <div class="price-box">
+          <span class="label">Precio estimado</span>
+          <span class="price">$4.500 <small>/ hora</small></span>
+        </div>
+        <button class="card-btn">Reservar Personal</button>
       </article>
 
       <!-- Tarjeta 3: Eventos -->
       <article class="card">
-        <div class="card-tag">Por Evento</div>
-        <h3>Barras de Tragos y Carpas</h3>
-        <p>Equipamiento completo e insumos según cantidad de invitados.</p>
-        <div class="price">Cotización por invitados</div>
-        <button class="card-btn">Armar Presupuesto</button>
+        <div class="card-tag-wrapper">
+          <span class="card-tag tag-event">Por Evento</span>
+          <span class="card-icon">🍹</span>
+        </div>
+        <h3>Barras de Tragos & Catering</h3>
+        <p>Barras móviles completas, barman profesional e insumos según la cantidad de invitados.</p>
+        <div class="price-box">
+          <span class="label">Presupuesto</span>
+          <span class="price">A medida <small>/ por persona</small></span>
+        </div>
+        <button class="card-btn">Armar Combo</button>
       </article>
     </div>
   </main>
