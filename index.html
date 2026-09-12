@@ -1,82 +1,68 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SaltaSimple | Contratación de Servicios en Salta</title>
-  <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
+<!-- Sección de Testimonios (Carrusel) -->
+  <section class="testimonials-section" id="testimonios">
+    <div class="container">
+      <h2 class="section-title">Lo que dicen quienes confían en SaltaSimple</h2>
+      <div class="testimonials-slider">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Contraté un flete para una mudanza en Salta Capital y en 10 minutos ya tenía todo coordinado. Excelente transparencia con la tarifa."</p>
+          <span class="author">— María E. (Grand Bourg)</span>
+        </div>
 
-  <header class="navbar">
-    <a href="#" class="brand">Salta<span>Simple</span></a>
-    <button class="btn-primary">+ Publicar Servicio</button>
-  </header>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Para el cumpleaños de mi hijo alquilé una barra de tragos sin alcohol y carpas. Todo llegó a tiempo y la atención fue de primera."</p>
+          <span class="author">— Gonzalo R. (San Lorenzo)</span>
+        </div>
 
-  <section class="hero">
-    <div class="hero-content">
-      <span class="hero-badge">Plataforma Salteña</span>
-      <h1>Contrata servicios locales en minutos</h1>
-      <p>Cotizaciones transparentes para fletes, eventos y soluciones para tu hogar.</p>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Excelente plataforma para conseguir servicio de limpieza confiable para la oficina. Todo súper ágil."</p>
+          <span class="author">— Lucía V. (Centro)</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <main class="container">
-    <!-- Filtros de Categorías -->
-    <div class="categories-bar">
-      <button class="cat-pill active">Todos</button>
-      <button class="cat-pill">🚚 Fletes y Traslados</button>
-      <button class="cat-pill">🧹 Limpieza</button>
-      <button class="cat-pill">🎉 Eventos y Carpas</button>
+  <!-- Sección de Instagram (Carrusel Feed) -->
+  <section class="instagram-section">
+    <div class="container">
+      <div class="instagram-header">
+        <div>
+          <span class="insta-badge">@saltasimple.ok</span>
+          <h2>Síguenos en Instagram</h2>
+        </div>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn-instagram">Ver Perfil</a>
+      </div>
+
+      <div class="instagram-slider">
+        <article class="insta-card">
+          <div class="insta-img-placeholder">📸 Post 1</div>
+          <div class="insta-caption">
+            <p>🚚 ¿Necesitas un flete rápido en Salta Capital? Cotiza al instante.</p>
+          </div>
+        </article>
+
+        <article class="insta-card">
+          <div class="insta-img-placeholder">📸 Post 2</div>
+          <div class="insta-caption">
+            <p>🎉 Barras de tragos y catering para tus eventos del fin de semana.</p>
+          </div>
+        </article>
+
+        <article class="insta-card">
+          <div class="insta-img-placeholder">📸 Post 3</div>
+          <div class="insta-caption">
+            <p>💼 ¿Eres prestador de servicios? Únete a nuestra red salteña.</p>
+          </div>
+        </article>
+
+        <article class="insta-card">
+          <div class="insta-img-placeholder">📸 Post 4</div>
+          <div class="insta-caption">
+            <p>🧹 Servicio de limpieza garantizado para hogares y oficinas.</p>
+          </div>
+        </article>
+      </div>
     </div>
-
-    <div class="services-grid">
-      <!-- Tarjeta 1: Fletes -->
-      <article class="card">
-        <div class="card-header">
-          <span class="card-tag tag-distance">Cotización por Distancia</span>
-          <span class="card-icon">🚚</span>
-        </div>
-        <h3>Fletes y Traslados Local/Provincial</h3>
-        <p>Servicio puerta a puerta con carga y descarga opcional. Unidades adaptadas para todo volumen.</p>
-        <div class="price-box">
-          <span class="label">Tarifa base</span>
-          <span class="price">$15.000 <small>/ viaje inicial</small></span>
-        </div>
-        <button class="card-btn">Calcular Flete</button>
-      </article>
-
-      <!-- Tarjeta 2: Limpieza -->
-      <article class="card">
-        <div class="card-tag-wrapper">
-          <span class="card-tag tag-hourly">Por Hora</span>
-          <span class="card-icon">🧹</span>
-        </div>
-        <h3>Limpieza Doméstica y Comercial</h3>
-        <p>Personal asegurado para mantenimiento de casas, departamentos, oficinas y fincas.</p>
-        <div class="price-box">
-          <span class="label">Precio estimado</span>
-          <span class="price">$4.500 <small>/ hora</small></span>
-        </div>
-        <button class="card-btn">Reservar Personal</button>
-      </article>
-
-      <!-- Tarjeta 3: Eventos -->
-      <article class="card">
-        <div class="card-tag-wrapper">
-          <span class="card-tag tag-event">Por Evento</span>
-          <span class="card-icon">🍹</span>
-        </div>
-        <h3>Barras de Tragos & Catering</h3>
-        <p>Barras móviles completas, barman profesional e insumos según la cantidad de invitados.</p>
-        <div class="price-box">
-          <span class="label">Presupuesto</span>
-          <span class="price">A medida <small>/ por persona</small></span>
-        </div>
-        <button class="card-btn">Armar Combo</button>
-      </article>
-    </div>
-  </main>
-
-</body>
-</html>
+  </section>

@@ -21,16 +21,63 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 .navbar .brand {
   font-size: 1.5rem;
   font-weight: 800;
   color: #0d9488;
   text-decoration: none;
-  letter-spacing: -0.5px;
 }
 .navbar .brand span {
   color: #0f172a;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  align-items: center;
+}
+.nav-links .nav-item {
+  text-decoration: none;
+  color: #334155;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links .nav-item:hover, .nav-links .nav-item.active {
+  color: #0d9488;
+}
+.nav-links .dropdown {
+  position: relative;
+}
+.nav-links .dropdown:hover .dropdown-menu {
+  display: block;
+}
+.nav-links .dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  list-style: none;
+  min-width: 200px;
+  padding: 0.5rem 0;
+}
+.nav-links .dropdown .dropdown-menu li a {
+  display: block;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  color: #334155;
+  font-size: 0.9rem;
+}
+.nav-links .dropdown .dropdown-menu li a:hover {
+  background: #f8fafc;
+  color: #0d9488;
 }
 
 .btn-primary {
@@ -50,7 +97,7 @@ body {
 .hero {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   color: white;
-  padding: 4rem 1rem;
+  padding: 3.5rem 1rem;
   text-align: center;
 }
 .hero .hero-badge {
@@ -63,7 +110,7 @@ body {
   border: 1px solid rgba(45, 212, 191, 0.3);
 }
 .hero h1 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   margin: 1rem 0 0.5rem;
 }
 .hero p {
@@ -74,37 +121,18 @@ body {
 
 .container {
   max-width: 1100px;
-  margin: 2rem auto;
+  margin: 2.5rem auto;
   padding: 0 1rem;
 }
 
-.categories-bar {
-  display: flex;
-  gap: 0.5rem;
-  overflow-x: auto;
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
-}
-.categories-bar .cat-pill {
-  background: white;
-  border: 1px solid #e2e8f0;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: all 0.2s;
-}
-.categories-bar .cat-pill:hover, .categories-bar .cat-pill.active {
-  background: #0f172a;
-  color: white;
-  border-color: #0f172a;
+.section-title {
+  margin-bottom: 1.5rem;
+  color: #0f172a;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
@@ -122,7 +150,7 @@ body {
   transform: translateY(-4px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-.card .card-header, .card .card-tag-wrapper {
+.card .card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -171,7 +199,6 @@ body {
   font-size: 0.75rem;
   color: #64748b;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 .card .price-box .price {
   font-size: 1.25rem;
@@ -195,4 +222,203 @@ body {
 }
 .card .card-btn:hover {
   background: #0f766e;
+}
+
+.testimonials-section {
+  background: white;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 3rem 0;
+}
+.testimonials-section .testimonials-slider {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+.testimonials-section .testimonials-slider::-webkit-scrollbar {
+  height: 6px;
+}
+.testimonials-section .testimonials-slider::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 4px;
+}
+.testimonials-section .testimonials-slider .testimonial-card {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.testimonials-section .testimonials-slider .testimonial-card .stars {
+  color: #f59e0b;
+  margin-bottom: 0.5rem;
+}
+.testimonials-section .testimonials-slider .testimonial-card p {
+  font-size: 0.95rem;
+  color: #334155;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+.testimonials-section .testimonials-slider .testimonial-card .author {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.instagram-section {
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  padding: 3rem 0;
+}
+.instagram-section .instagram-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.instagram-section .instagram-header .insta-badge {
+  font-size: 0.85rem;
+  color: #e1306c;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.instagram-section .instagram-header h2 {
+  color: #0f172a;
+  font-size: 1.5rem;
+}
+.instagram-section .btn-instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: white;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+}
+.instagram-section .btn-instagram:hover {
+  opacity: 0.9;
+}
+.instagram-section .instagram-slider {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+.instagram-section .instagram-slider::-webkit-scrollbar {
+  height: 6px;
+}
+.instagram-section .instagram-slider::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 4px;
+}
+.instagram-section .instagram-slider .insta-card {
+  flex: 0 0 240px;
+  scroll-snap-align: start;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.instagram-section .instagram-slider .insta-card .insta-img-placeholder {
+  height: 180px;
+  background: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-weight: 600;
+}
+.instagram-section .instagram-slider .insta-card .insta-caption {
+  padding: 0.8rem;
+}
+.instagram-section .instagram-slider .insta-card .insta-caption p {
+  font-size: 0.85rem;
+  color: #334155;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.footer {
+  background: #0f172a;
+  color: #94a3b8;
+  padding: 3rem 1rem 1.5rem;
+}
+.footer .footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.footer .footer-container .brand {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0d9488;
+  text-decoration: none;
+}
+.footer .footer-container .brand span {
+  color: white;
+}
+.footer .footer-container p {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+.footer .footer-container h4 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+.footer .footer-container ul {
+  list-style: none;
+}
+.footer .footer-container ul li {
+  margin-bottom: 0.5rem;
+}
+.footer .footer-container ul a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.footer .footer-container ul a:hover {
+  color: white;
+}
+.footer .footer-bottom {
+  max-width: 1100px;
+  margin: 0 auto;
+  border-top: 1px solid #334155;
+  padding-top: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
 }
